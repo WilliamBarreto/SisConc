@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+		<title>Inicio</title>
+	</h:head>
+	<h:body>
+	
+		<h:form>
+			<h:commandLink action="#{bancaMB.cadastrar}" value="Incluir"/>
+		</h:form>
+	
+		
+		<h:dataTable value="#{bancaMB.bancas}" var="banca">
+			<f:facet name="header">Orgão cadastrados</f:facet>
+			
+			<h:column>
+				<f:facet name="header">Nome:</f:facet>
+				#{banca.nome}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Alterar</f:facet>
+				<h:form>
+					<h:commandLink action="#{bancaMB.atualizar}" value="Atualizar">
+						<f:setPropertyActionListener target="#{bancaMB.banca}" value="#{banca}"></f:setPropertyActionListener>
+					</h:commandLink>
+				</h:form>
+			</h:column>
+			
+		</h:dataTable>
+		
+	</h:body>
+	
+</html>

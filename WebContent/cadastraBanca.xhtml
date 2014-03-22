@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+		<title>Inicio</title>
+	</h:head>
+	<h:body>
+	
+		<h1>Banca</h1>
+		<h:form>
+			
+			<h:outputLabel value="Banca "/><br/>
+			<h:inputText value="#{bancaMB.banca.nome}"/> <br/>
+			
+			<h:commandButton action="#{bancaMB.salvar}" value="Cadastrar"/>
+		</h:form>
+		
+	</h:body>
+	
+</html>
