@@ -10,7 +10,7 @@
 		username="root"
 		password="root"
 		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost/sisconc"/>	
+		url="jdbc:mysql://localhost/sisconc"/>	 
 		
 	
 	

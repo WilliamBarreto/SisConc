@@ -1,5 +1,6 @@
 package br.wb.sisconc.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,14 +54,15 @@ public class Arquivo {
 		this.tipoArquivo = tipoArquivo;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name="COD_PROVA")
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cod_prova") 
 	public Prova getProva() {
 		return prova;
 	}
 	public void setProva(Prova prova) {
 		this.prova = prova;
 	}
+
 	
 	
 }

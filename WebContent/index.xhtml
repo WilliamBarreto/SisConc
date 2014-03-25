@@ -3,17 +3,48 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-	
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
 	<h:head>
-		<title>Inicio</title>
+		
+		<style>
+			.ui-widget {
+				font-size: 80% !important;
+				font-size: 13px !important;
+			}
+		</style>
 	</h:head>
 	<h:body>
 	
-		<h:outputText value="#{orgaoMB.orgao.codigo}"/><br/>
-		<h:outputText value="#{orgaoMB.orgao.sigla}"/><br/>
-		<h:outputText value="#{orgaoMB.orgao.nome}"/>
-		
-	</h:body>
+		<h:form>
 	
+			<p:growl id="messages" />
+			<p:menubar>
+				<p:submenu label="Provas" icon="ui-icon-document">
+					<p:menuitem value="Cadastrar" url="cadastraProva.xhtml" update="messages" ajax="false"/>
+					<p:menuitem value="Listar" url="cadastraProva.xhtml" update="messages" ajax="false"/>
+					<p:menuitem value="Buscar" url="cadastraProva.xhtml" update="messages" ajax="false"/>
+				</p:submenu>
+				<p:submenu label="Bancas" icon="ui-icon-newwin">
+					<p:menuitem value="Cadastrar" url="cadastraBanca.xhtml" icon="ui-icon-close" update="messages" ajax="false"/>
+					<p:menuitem value="Listar" url="listaBanca.xhtml" icon="ui-icon-note"/>
+				</p:submenu>
+				<p:submenu label="Orgaos" icon="ui-icon-home">
+					<p:menuitem value="Cadastrar" url="cadastraOrgao.xhtml" icon="ui-icon-close" update="messages" ajax="false"/>
+					<p:menuitem value="Listar" url="listaOrgao.xhtml" />
+				</p:submenu>
+				<p:submenu label="Arquivos" icon="ui-icon-disk">
+					<p:menuitem value="Cadastrar" actionListener="#{provaMB.cadastrar}" icon="ui-icon-close" update="messages" ajax="false"/>
+					<p:menuitem value="Quit" url="#" />
+				</p:submenu>
+	
+			</p:menubar>
+	
+	
+	
+		</h:form>
+	
+	</h:body>
+
 </html>

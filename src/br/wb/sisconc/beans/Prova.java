@@ -1,11 +1,14 @@
 package br.wb.sisconc.beans;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +20,7 @@ public class Prova {
 	private Banca banca;
 	private String ano;
 	private String cargo;
+	private List<Arquivo> arquivos;
 	
 //	public Prova(){
 //		this.banca = new Banca();
@@ -66,4 +70,14 @@ public class Prova {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	
+	@OneToMany(mappedBy = "prova")
+	public List<Arquivo> getArquivos() {
+		return arquivos;
+	}
+	public void setArquivos(List<Arquivo> arquivos) {
+		this.arquivos = arquivos;
+	}
+	
+	
 }

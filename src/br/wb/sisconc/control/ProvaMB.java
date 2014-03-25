@@ -25,7 +25,7 @@ public class ProvaMB implements Serializable{
 	
 	private List<Orgao> orgaos;
 	private List<Banca> bancas;
-	private List<Arquivo> arquivos;
+	private Arquivo arquivo;
 	
 	public ProvaMB(){
 		prova = new Prova();
@@ -34,14 +34,11 @@ public class ProvaMB implements Serializable{
 		bancas = new BancaDAO().findAll(Banca.class);
 	}
 	
-	public String atualizar(){
-		return cadastrar();
-	}
 	
 	public String cadastrar(){
 		orgaos = new OrgaoDAO().findAll(Orgao.class);
 		bancas = new BancaDAO().findAll(Banca.class);		
-		return "cadastraProva";
+		return "cadastraProva?faces-redirect=true";
 	}
 	
 	public String salvar(){
@@ -68,14 +65,6 @@ public class ProvaMB implements Serializable{
 		this.bancas = bancas;
 	}
 
-	public List<Arquivo> getArquivos() {
-		return arquivos;
-	}
-
-	public void setArquivos(List<Arquivo> arquivos) {
-		this.arquivos = arquivos;
-	}
-
 	public Prova getProva() {
 		return prova;
 	}
@@ -93,6 +82,16 @@ public class ProvaMB implements Serializable{
 	}
 	public void setProvaDao(ProvaDAO provaDao) {
 		this.provaDao = provaDao;
+	}
+
+
+	public Arquivo getArquivo() {
+		return arquivo;
+	}
+
+
+	public void setArquivo(Arquivo arquivo) {
+		this.arquivo = arquivo;
 	}
 	
 }
